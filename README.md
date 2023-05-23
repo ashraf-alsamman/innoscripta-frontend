@@ -28,9 +28,13 @@ https://github.com/ashraf-alsamman/innoscripta-backend
  `docker-compose build `
  `docker-compose up`
   
-- to fetch latest news
- `RUN php artisan new:fetch `
-  
+# Run composer install and migrations and fetch new data
+
+`docker exec -it app bash`
+`php composer install`
+`php artisan migrate:fresh`
+`php artisan new:fetch`
+
 # How to run frontend
   clone 
   https://github.com/ashraf-alsamman/innoscripta-frontend
