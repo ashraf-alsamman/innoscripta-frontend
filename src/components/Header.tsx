@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { selectAuth } from '../redux/authSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const AuthNav = () => {
   const auth = useSelector(selectAuth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   async function logout() {
     const confirmed = window.confirm('Are you sure you want to log out?');

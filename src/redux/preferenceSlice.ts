@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import API_BASE_URL from '../config/config';
 
 export const fetchPreferences = createAsyncThunk(
     'preferences/fetchPreferences',
@@ -8,7 +9,7 @@ export const fetchPreferences = createAsyncThunk(
         const auth  = (getState() as any).auth  ; // Retrieve the auth state from Redux store
         const token = auth.token; // Access the token value
   
-        const response = await axios.post('api/preference/get/all', null, {
+        const response = await axios.post(API_BASE_URL+'api/preference/get/all', null, {
           headers: {
             Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           },
@@ -29,7 +30,7 @@ export const fetchPreferences = createAsyncThunk(
         const auth  = (getState() as any).auth  ; // Retrieve the auth state from Redux store
         const token = auth.token; // Access the token value
   
-        const response = await axios.post('/api/preference/get', null, {
+        const response = await axios.post(API_BASE_URL+'api/preference/get', null, {
           headers: {
             Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           },
@@ -50,7 +51,7 @@ export const fetchPreferences = createAsyncThunk(
         const auth = (getState() as any).auth;
         const token = auth.token;
   
-        const response = await axios.post('/api/preference/save', preferences, {
+        const response = await axios.post(API_BASE_URL+'api/preference/save', preferences, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

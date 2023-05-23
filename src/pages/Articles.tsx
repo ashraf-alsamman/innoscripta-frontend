@@ -77,9 +77,7 @@ const Articles = () => {
         setFilters({ ...filters, date: e });
     };
 
-    const handlePageChange = (newPage: number) => {
-        setFilters({ ...filters, page: newPage });
-    };
+
 
     const handleResetFilters = () => {
         setFilters({ date: '', category: '', source: '', page: 1, perPage: 10 });

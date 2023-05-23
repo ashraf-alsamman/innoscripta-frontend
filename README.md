@@ -20,24 +20,27 @@
 - **[redux-persist](https://www.npmjs.com/package/redux-persist)**
   
   
-  # How to run backend
-  clone 
-  https://github.com/ashraf-alsamman/innoscripta-backend
+# How to run backend
+clone 
+https://github.com/ashraf-alsamman/innoscripta-backend
 
 - run docker
-  `docker-compose build `
-  `docker-compose up`
+ `docker-compose build `
+ `docker-compose up`
+  
+- to fetch latest news
+ `RUN php artisan new:fetch `
   
 # How to run frontend
   clone 
   https://github.com/ashraf-alsamman/innoscripta-frontend
 
 - Run frontend (react js) project
-  `npm install`
-  `npm start`
+ `npm install`
+ `npm start`
   
-  - Run frontend (react js) project with docker 
-  ` docker build -t my-react-app docker-compose up`
+- Run frontend (react js) project with docker 
+ ` docker build -t my-react-app docker-compose up`
 
 
 

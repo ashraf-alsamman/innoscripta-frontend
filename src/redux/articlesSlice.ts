@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import API_BASE_URL from '../config/config';
 
 export const fetchArticles = createAsyncThunk(
   "articles/fetchArticles",
   async (filters: object) => {
     try {
-      const response = await axios.get("/api/articles", { params: filters });
+      const response = await axios.get(API_BASE_URL+"api/articles", { params: filters });
       return response.data;
     } catch (error) {
       throw new Error("Failed to fetch articles");
@@ -19,7 +20,7 @@ export const fetchMyArticles = createAsyncThunk(
     try {
       const auth = (getState() as any).auth; // Retrieve the auth state from Redux store
       const token = auth.token; // Access the token value
-      const response = await axios.post("/api/articles/my", null, {
+      const response = await axios.post(API_BASE_URL+"api/articles/my", null, {
         headers: {
           Authorization: `Bearer ${token}`, // Include the token in the Authorization header
         },
