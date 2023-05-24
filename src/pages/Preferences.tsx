@@ -51,7 +51,7 @@ const Preferences: React.FC = () => {
                     <div className="row">
                         <h3>Preferences</h3>
                         <hr />
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-5">
                             <h3>categories</h3>
                             {
                                 SelectPreferences.preferences && SelectPreferences.preferences.categories
@@ -70,7 +70,7 @@ const Preferences: React.FC = () => {
                                 )}
                         </div>
 
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-5">
                             <h3>Authors</h3>
                             {
                                 SelectPreferences.preferences && SelectPreferences.preferences.authors
@@ -89,7 +89,7 @@ const Preferences: React.FC = () => {
                                 )}
                         </div>
 
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-5">
                             <h3>sources</h3>
                             {
                                 SelectPreferences.preferences && SelectPreferences.preferences.sources
