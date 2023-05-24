@@ -47,7 +47,7 @@ const Preferences: React.FC = () => {
             {SelectPreferences && SelectPreferences['loading'] ? (
                 <Loading text="Loading your preferences please wait ..." />
             ) : (
-                <>
+                <div className='container'>
                     <div className="row">
                         <h3>Preferences</h3>
                         <hr />
@@ -113,7 +113,7 @@ const Preferences: React.FC = () => {
                         <button type="button" className="btn btn-secondary btn-lg" onClick={handleSavePreferences}>Save Preferences</button>
                     </div>
 
-                </>
+                </div>
             )}
 
 

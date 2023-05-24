@@ -97,10 +97,9 @@ const Articles = () => {
     const today = new Date();
     return (
         <div className="container">
-            {JSON.stringify(articles.data.data)}
             <h4>Latest Articles</h4>
             <div className="row">
-                <div className="col-3">
+                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                     <DatePicker
                         selected={filters.date ? new Date(filters.date) : null}
                         name="date"
@@ -112,7 +111,7 @@ const Articles = () => {
                     />
                 </div>
 
-                <div className="col-3">
+                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                     <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category" value={filters.category} onChange={handleFilterChange}>
                         <option value="">All Categories</option>
                         {clonedArticles && Array.from(new Set(clonedArticles.map((article: any) => article.category))).map((category: string) => (
@@ -121,7 +120,7 @@ const Articles = () => {
                     </select>
                 </div>
 
-                <div className="col-3">
+                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                     <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="source" value={filters.source} onChange={handleFilterChange}>
                         <option value="">All Sources</option>
                         {clonedArticles && Array.from(new Set(clonedArticles.map((article: any) => article.source))).map((source: string) => (
@@ -131,11 +130,10 @@ const Articles = () => {
                 </div>
 
 
-                <div className="col-3">
+                <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 d-grid gap-2 mb-4">
                     <button onClick={handleResetFilters} className='btn btn-secondary btn-lg'>Reset Filters</button>
                 </div>
             </div>
-
             {articles.data.data.map((article: any) => (
                 <ArticleComponent key={article.id} article={article} />
             ))}

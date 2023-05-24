@@ -58,7 +58,10 @@ const Header: React.FC = () => {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <>
+ 
+
+      <nav className="navbar navbar-expand-lg my-navbar-dark  mb-5">
       <div className="container">
         <Link to="/" className="navbar-brand">innoscripta</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +77,8 @@ const Header: React.FC = () => {
         </div>
       </div>
     </nav>
+    </>
+
   );
 };
 
