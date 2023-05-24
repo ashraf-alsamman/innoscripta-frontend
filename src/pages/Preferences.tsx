@@ -58,8 +58,8 @@ const Preferences: React.FC = () => {
                                     && SelectPreferences.preferences.categories.length > 0 ? (
                                     <Multiselect
                                         options={SelectPreferences?.preferences?.categories.map((data) => ({ key: data, value: data }))}
-                                        selectedValues={SelectPreferences?.myPreferences?.sources
-                                            ? SelectPreferences.myPreferences.categories.map((author) => ({ key: author, value: author }))
+                                        selectedValues={SelectPreferences?.myPreferences?.categories
+                                            ? SelectPreferences.myPreferences.categories.map((data) => ({ key: data, value: data }))
                                             : []}
                                         onSelect={(selectedList) => handleCategoryChange(selectedList.map((item) => item.key))}
                                         onRemove={(selectedList) => handleCategoryChange(selectedList.map((item) => item.key))}
@@ -77,7 +77,7 @@ const Preferences: React.FC = () => {
                                     && SelectPreferences.preferences.authors.length > 0 ? (
                                     <Multiselect
                                         options={SelectPreferences?.preferences?.authors.map((author) => ({ key: author, value: author }))}
-                                        selectedValues={SelectPreferences?.myPreferences?.sources
+                                        selectedValues={SelectPreferences?.myPreferences?.authors
                                             ? SelectPreferences.myPreferences.authors.map((author) => ({ key: author, value: author }))
                                             : []}
                                         onSelect={(selectedList) => handleAuthorChange(selectedList.map((item) => item.key))}
@@ -97,7 +97,7 @@ const Preferences: React.FC = () => {
                                     <Multiselect
                                         options={SelectPreferences?.preferences?.sources.map((data) => ({ key: data, value: data }))}
                                         selectedValues={SelectPreferences?.myPreferences?.sources
-                                            ? SelectPreferences.myPreferences.sources.map((author) => ({ key: author, value: author }))
+                                            ? SelectPreferences.myPreferences.sources.map((data) => ({ key: data, value: data }))
                                             : []} onSelect={(selectedList) => handleSourceChange(selectedList.map((item) => item.key))}
                                         onRemove={(selectedList) => handleSourceChange(selectedList.map((item) => item.key))}
                                         displayValue="value" closeOnSelect={false} showCheckbox={true}

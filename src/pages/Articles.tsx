@@ -97,6 +97,7 @@ const Articles = () => {
     const today = new Date();
     return (
         <div className="container">
+            {JSON.stringify(articles.data.data)}
             <h4>Latest Articles</h4>
             <div className="row">
                 <div className="col-3">
