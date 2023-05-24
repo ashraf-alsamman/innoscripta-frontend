@@ -26,7 +26,7 @@ const MyArticles = () => {
             return <>
             <div className="note-container">
                 <p className="message" >
-                You do not have a preferences 
+                You do not have any preferences 
                 </p>
                 <Link to="/preferences" className="note-link">
                     Go to preferences
