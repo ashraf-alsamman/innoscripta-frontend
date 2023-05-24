@@ -4,36 +4,43 @@ import { fetchMyArticles } from '../redux/articlesSlice';
 import ArticleComponent from '../components/ArticleComponent';
 import "react-datepicker/dist/react-datepicker.css";
 import Loading from '../components/Loading';
+import { Link } from 'react-router-dom';
 
 const MyArticles = () => {
     const dispatch = useDispatch();
     const { myArticles, loading, error } = useSelector((state: any) => state.articles);
-  
-    useEffect(() => {
-        dispatch(fetchMyArticles( ) as any);
-     }, [ ]);
 
-  
-   
-     if (error) {
+    useEffect(() => {
+        dispatch(fetchMyArticles() as any);
+    }, []);
+
+    if (error) {
         return <>Error: {error}</>
     }
-    // if (!myArticles || !myArticles.data|| myArticles.data.length === 0 ) {
-    //     return <p>The array is empty.</p>;
-    // }
-    if (!myArticles || !myArticles.data|| !myArticles.data.data) {
-        return <Loading text="Fetching new articles based on your saved preferences. Please wait ..." /> ;
+    if (  loading ) {
+        return <Loading text="Fetching new articles based on your saved preferences. Please wait ..." />;
     }
 
-
+    if (myArticles && myArticles.data && myArticles.data.length === 0) {
+        
+            return <>
+            <div className="note-container">
+                <p className="message" >
+                You do not have a preferences 
+                </p>
+                <Link to="/preferences" className="note-link">
+                    Go to preferences
+                </Link>
+            </div>
+        </>;
+        
+     }
     return (
         <div className="container">
             <h4>MY Articles</h4>
-            {myArticles.data.data.map((article: any) => (
+            {myArticles && myArticles.data && myArticles.data.data && myArticles.data.data.map((article: any) => (
                 <ArticleComponent key={article.id} article={article} />
             ))}
-
-
         </div>
     );
 };

@@ -35,7 +35,7 @@ const Preferences: React.FC = () => {
         dispatch(savePreferences(userPreferences) as any)
             .unwrap()
             .then(() => {
-                navigate('/');
+                navigate('/articles/my');
             })
             .catch((err: any) => {
                 alert(err.message);
